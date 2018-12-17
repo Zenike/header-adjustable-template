@@ -1,0 +1,153 @@
+// desktop
+@nb_header_height: 160px;
+@nb_space_around_logo: 15px;
+@nb_logo_height: 60px;
+// mobile
+@nb_mobile_switch: 700px;
+
+.header__spacer {
+display: block;
+height: @nb_header_height;
+@media all and (max-width:@nb_mobile_switch) {
+height: 50px;
+}
+}
+
+.header {
+background-color: #eee;
+position: fixed;
+top: 0;
+left: 0;
+height: @nb_header_height;
+width: 100%;
+display: flex;
+align-items: center;
+	.header__logo {
+	display: block;
+	margin: 10px @nb_space_around_logo;
+	height: @nb_logo_height;
+		img {
+		display: block;
+		height: 100%;
+		}
+	}
+	.header__menubutton {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 26px;
+	cursor: pointer;
+	display: none;
+		&:hover {
+		color: @theme;
+		}
+	}
+	.mainnavbar {
+	flex-grow: 1;
+	// style plus bas
+	}
+	&.header--vertical {
+	flex-direction: column;
+	justify-content: space-between;
+		.mainnavbar {
+		align-self: stretch;
+		flex-grow: 0;
+		}
+	}
+@media all and (max-width:@nb_mobile_switch) {
+display: block;
+height: 50px;
+z-index: 501;
+	.header__logo {
+	height: 40px;
+	margin: 5px;
+	float: left;
+	}
+	.header__menubutton {
+	display: block;
+	}
+}
+}
+
+.mainnavbar {
+font-size: 10px;
+	.mainnavbar__cross {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 50px;
+	line-height: 50px;
+	width: 50px;
+	text-align: center;
+	font-size: 30px;
+	color: @t;
+	cursor: pointer;
+	display: none;
+		&:hover {
+		color: @theme;
+		}
+	}
+	.mainnavbar__list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 1.6em;
+		li {
+		margin: 10px;
+		}
+		a {
+		color: @t;
+		text-decoration: none;
+		display: block;
+		font-weight: 300;
+		text-transform: uppercase;
+		text-align: center;
+		}
+		a:hover {
+		text-decoration: underline;
+		}
+		.current_page_item a, .current-menu-item a {
+		color: @theme;
+		}
+	}
+@media all and (max-width:@nb_mobile_switch) {
+overflow: hidden;
+margin: 0;
+position: fixed;
+top: 0;
+height: 100%;
+right: 0px;
+z-index: 500;
+background-color: @lightgray;
+max-width: 400px;
+width: 85%;
+transform: translate(400px,0);
+will-change: transform;
+transition: transform 0.5s;
+font-size: 9px;
+	&.stp-menu-open {
+	transform: translate(0px,0);
+	}
+	.mainnavbar__cross {
+	display: block;
+	}
+	.mainnavbar__list {
+	display: block;
+	margin-top: 60px;
+		li {
+		text-align: center;
+		margin: 5px 0;
+		}
+		a {
+		padding: 10px;
+		}
+	}
+}
+}

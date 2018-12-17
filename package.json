@@ -1,0 +1,17 @@
+{
+  "name": "standard-css-menu",
+  "version": "1.0.0",
+  "description": "standard-css-menu template zenike",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "normalize.css": "*",
+    "formflex": "*",
+    "startpack": "*",
+    "sliker": "*"
+  },
+  "author": "Zenike",
+  "license": "ISC"
+}
